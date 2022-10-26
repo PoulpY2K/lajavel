@@ -5,10 +5,19 @@
 </head>
 <body>
 
-je suis un super fichier {{javel}} et j'ai envie d'avoir des {{moustaches}}
+<h1>{{ john.getFirstName() }} {{ john.lastName }}</h1>
+<br/>
+<h1>{{ mary.getFirstName() }} {{ mary.lastName }}</h1>
+
+<ul>
+    {% for user in users %}
+        <li>{{ user.username|e }}</li>
+    {% endfor %}
+</ul>
 
 <style>
     body {
+        text-align: center;
         font-family: sans-serif;
     }
 

@@ -18,9 +18,19 @@ public class View {
     @SafeVarargs
     public static String make(String viewName, Map.Entry<String, Object>... entries) {
         String viewContent = View.getViewContentFromFilename(viewName);
-        Matcher m = Pattern.compile("\\{\\{([^{{}}]*)\\}\\}").matcher(viewContent);
-
         StringBuffer sb = new StringBuffer();
+
+        viewContent = View.replaceProperties(viewContent, sb, entries);
+
+        View.clearBuffer(sb);
+
+        viewContent = View.replaceAssets(viewContent, sb);
+
+        return viewContent;
+    }
+
+    public static String replaceProperties(String html, StringBuffer sb, Map.Entry<String, Object>... entries) {
+        Matcher m = Pattern.compile("\\{\\{([^{{}}]*)\\}\\}").matcher(html);
 
         while (m.find()) {
             String rawStringOfObject = m.group(1).replaceAll("\\s+", "");
@@ -38,7 +48,6 @@ public class View {
                     m.appendReplacement(sb, View.getValueOf(propertyName, entry.getValue()));
                     break;
                 }
-
             }
         }
 
@@ -47,13 +56,25 @@ public class View {
         return sb.toString();
     }
 
-    private static String getTemplateFunctions(String viewContent) {
-        // Create enum for the differents functions (foreach, if, etc)
-        // Get the content inside of the opening tag {% ... %}
-        // Get the content between the opening tag and the closing tag
-        // Switch between the different enum functions and do things
+    public static String replaceAssets(String html, StringBuffer sb) {
+        Matcher m = Pattern.compile("\\{\\{\\s*?asset\\('([^{{}}]*)'\\)\\s*?\\}\\}").matcher(html);
 
-        return "";
+        while (m.find()) {
+            String path = m.group(1).replaceAll("\\s+", "");
+
+            URL resource = Main.class.getClassLoader().getResource("public/" + path);
+
+            if (resource == null) {
+                Log.error("No resource found at public/" + path);
+                throw new RuntimeException("No resource found at public/" + path);
+            }
+
+            m.appendReplacement(sb, path);
+        }
+
+        m.appendTail(sb);
+
+        return sb.toString();
     }
 
     private static String getViewContentFromFilename(String filename) {
@@ -109,5 +130,9 @@ public class View {
         }
 
         return clazz.cast(returnValue);
+    }
+
+    private static StringBuffer clearBuffer(StringBuffer sb) {
+        return sb.delete(0, sb.length());
     }
 }

@@ -2,7 +2,8 @@
 <head>
     <meta charset='UTF-8'>
     <title>Moustaches</title>
-
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <script src="{{ asset('js/index.js') }}" async></script>
 </head>
 <body>
 

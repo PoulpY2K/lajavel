@@ -20,18 +20,16 @@ public class View {
         String viewContent = View.getViewContentFromFilename(viewName);
         StringBuffer sb = new StringBuffer();
 
-        viewContent = View.replacePropertiesInHtml(viewContent, sb, entries);
+        viewContent = View.replaceProperties(viewContent, sb, entries);
 
-        StringBuffer sb2 = new StringBuffer();
+        View.clearBuffer(sb);
 
-        if (View.hasCss(viewName)) {
-            viewContent = View.addLinkToCss(viewName, viewContent, sb2);
-        }
+        viewContent = View.replaceAssets(viewContent, sb);
 
         return viewContent;
     }
 
-    public static String replacePropertiesInHtml(String html, StringBuffer sb, Map.Entry<String, Object>... entries) {
+    public static String replaceProperties(String html, StringBuffer sb, Map.Entry<String, Object>... entries) {
         Matcher m = Pattern.compile("\\{\\{([^{{}}]*)\\}\\}").matcher(html);
 
         while (m.find()) {
@@ -58,25 +56,25 @@ public class View {
         return sb.toString();
     }
 
-    public static String addLinkToCss(String fileName, String html, StringBuffer sb) {
-        Matcher m = Pattern.compile("(<head>)(.*)(</head>)", Pattern.DOTALL).matcher(html);
+    public static String replaceAssets(String html, StringBuffer sb) {
+        Matcher m = Pattern.compile("\\{\\{\\s*?asset\\('([^{{}}]*)'\\)\\s*?\\}\\}").matcher(html);
 
         while (m.find()) {
-            m.appendReplacement(sb, "$1$2    <link rel=\"stylesheet\" href=\"/css/" + fileName + ".css\">\r\n$3");
+            String path = m.group(1).replaceAll("\\s+", "");
+
+            URL resource = Main.class.getClassLoader().getResource("public/" + path);
+
+            if (resource == null) {
+                Log.error("No resource found at public/" + path);
+                throw new RuntimeException("No resource found at public/" + path);
+            }
+
+            m.appendReplacement(sb, path);
         }
 
         m.appendTail(sb);
 
         return sb.toString();
-    }
-
-    private static String getTemplateFunctions(String viewContent) {
-        // Create enum for the differents functions (foreach, if, etc)
-        // Get the content inside of the opening tag {% ... %}
-        // Get the content between the opening tag and the closing tag
-        // Switch between the different enum functions and do things
-
-        return "";
     }
 
     private static String getViewContentFromFilename(String filename) {
@@ -134,7 +132,7 @@ public class View {
         return clazz.cast(returnValue);
     }
 
-    private static boolean hasCss(String filename) {
-        return Main.class.getClassLoader().getResource("public/css/" + filename + ".css") != null;
+    private static StringBuffer clearBuffer(StringBuffer sb) {
+        return sb.delete(0, sb.length());
     }
 }

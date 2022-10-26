@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Je suis un test</h1>
+<h1>{{ sponsor.name }}</h1>
 
 </body>
 

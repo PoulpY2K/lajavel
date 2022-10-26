@@ -18,9 +18,21 @@ public class View {
     @SafeVarargs
     public static String make(String viewName, Map.Entry<String, Object>... entries) {
         String viewContent = View.getViewContentFromFilename(viewName);
-        Matcher m = Pattern.compile("\\{\\{([^{{}}]*)\\}\\}").matcher(viewContent);
-
         StringBuffer sb = new StringBuffer();
+
+        viewContent = View.replacePropertiesInHtml(viewContent, sb, entries);
+
+        StringBuffer sb2 = new StringBuffer();
+
+        if (View.hasCss(viewName)) {
+            viewContent = View.addLinkToCss(viewName, viewContent, sb2);
+        }
+
+        return viewContent;
+    }
+
+    public static String replacePropertiesInHtml(String html, StringBuffer sb, Map.Entry<String, Object>... entries) {
+        Matcher m = Pattern.compile("\\{\\{([^{{}}]*)\\}\\}").matcher(html);
 
         while (m.find()) {
             String rawStringOfObject = m.group(1).replaceAll("\\s+", "");
@@ -38,8 +50,19 @@ public class View {
                     m.appendReplacement(sb, View.getValueOf(propertyName, entry.getValue()));
                     break;
                 }
-
             }
+        }
+
+        m.appendTail(sb);
+
+        return sb.toString();
+    }
+
+    public static String addLinkToCss(String fileName, String html, StringBuffer sb) {
+        Matcher m = Pattern.compile("(<head>)(.*)(</head>)", Pattern.DOTALL).matcher(html);
+
+        while (m.find()) {
+            m.appendReplacement(sb, "$1$2    <link rel=\"stylesheet\" href=\"/css/" + fileName + ".css\">\r\n$3");
         }
 
         m.appendTail(sb);
@@ -109,5 +132,9 @@ public class View {
         }
 
         return clazz.cast(returnValue);
+    }
+
+    private static boolean hasCss(String filename) {
+        return Main.class.getClassLoader().getResource("public/css/" + filename + ".css") != null;
     }
 }

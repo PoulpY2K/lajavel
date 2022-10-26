@@ -1,6 +1,7 @@
 package lajavel;
 
 import io.javalin.Javalin;
+import io.javalin.http.staticfiles.Location;
 
 public class Application {
 
@@ -8,14 +9,19 @@ public class Application {
     public Javalin server;
     public int port;
     public Mode mode;
+
     private Application(int port, Mode mode) {
         this.port = port;
         this.mode = mode;
-        this.server = Javalin.create().start(this.port);
+        this.server = Javalin.create(config -> {
+            config.enableCorsForAllOrigins();
+            config.addStaticFiles("/public", Location.CLASSPATH);
+        }).start(this.port);
     }
 
     /**
      * Start the application
+     *
      * @param port The port to run the application on
      */
     public static void start(int port) {
@@ -28,7 +34,7 @@ public class Application {
      * @return
      */
     public static Application start(int port, Mode mode) {
-        if(instance == null) {
+        if (instance == null) {
             instance = new Application(port, mode);
         } else {
             throw new RuntimeException("Application already started");

@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Application app = Application.start(7070, Mode.DEVELOPMENT);
+        Application.start(7070, Mode.DEVELOPMENT);
 
         Log.debug("debug");
         Log.info("info");

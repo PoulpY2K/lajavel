@@ -1,13 +1,19 @@
 <html lang="FR-fr">
 <head>
     <meta charset='UTF-8'>
-    <title>Moustaches</title>
+    <title>Lajavel</title>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <script src="{{ asset('js/index.js') }}" async></script>
 </head>
 <body>
 
 <h1>{{ sponsor.name }}</h1>
+
+<ul>
+    {% for sponsor in sponsors %}
+    <li>{{ sponsor.name }}</li>
+    {% endfor %}
+</ul>
 
 </body>
 

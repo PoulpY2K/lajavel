@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-// INSTANCE
+// SINGLETON WITH ENUM INSTANCE
 // https://stackoverflow.com/questions/26285520/implementing-singleton-with-an-enum-in-java
 
 public enum ContributorRepository {

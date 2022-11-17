@@ -4,6 +4,7 @@ import app.model.Sponsor;
 import lajavel.Log;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +19,8 @@ public enum SponsorRepository {
 
     SponsorRepository() {
         this.sponsors = new ArrayList<>();
+        this.sponsors.add(new Sponsor("Sponsor 1", "test", "url", new Date()));
+        this.sponsors.add(new Sponsor("Sponsor 2", "test", "url", new Date()));
     }
 
     public static Sponsor get(int id) {

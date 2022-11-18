@@ -3,7 +3,6 @@ package app.repository;
 import app.model.Sponsor;
 import lajavel.Log;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -17,11 +16,11 @@ public enum SponsorRepository {
     private final List<Sponsor> sponsors;
 
     SponsorRepository() {
-        this.sponsors = new ArrayList<>();
-        this.sponsors.add(new Sponsor("MyDigitalSchool",
+        Sponsor sponsor = new Sponsor("MyDigitalSchool",
                 "https://www.lacuisineduweb.com/wp-content/uploads/2020/01/logo-grand-detoure.png",
                 "https://www.mydigitalschool.com/",
-                new Date()));
+                new Date());
+        this.sponsors = List.of(sponsor);
     }
 
     public static Sponsor get(int id) {

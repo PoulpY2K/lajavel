@@ -77,7 +77,8 @@ public class View {
         while (m.find()) {
             String item = View.getMatcherGroup(m, 1);
             String items = View.getMatcherGroup(m, 2);
-            String content = View.getMatcherGroup(m, 3);
+            // We don't replace spaces in the content
+            String content = m.group(3);
 
             for (Map.Entry<String, Object> entry : entries) {
                 if (entry.getKey().equals(items)) {

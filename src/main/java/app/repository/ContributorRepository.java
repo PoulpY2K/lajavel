@@ -16,6 +16,7 @@ public enum ContributorRepository {
 
     private ContributorRepository() {
         this.contributors = new ArrayList<>();
+        this.contributors.add(new Contributor("Stéphane", "https://media-exp1.licdn.com/dms/image/D4E03AQEqpgOhywBo0w/profile-displayphoto-shrink_800_800/0/1666794455902?e=1674086400&v=beta&t=zIr2aAwuLYAFsey5fXfSzHa2xVaSQ-UKt5I6qsgZmxo", "Humblot", "https://github.com/humblots", 10));
     }
 
     public static Contributor get(int id) {

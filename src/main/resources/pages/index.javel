@@ -11,94 +11,30 @@
     {% include tailwind %}
 </head>
 
-<!--<body>
-{% include header %}
-
-<h1 class="">{{ stephane.firstName }} {{ stephane.lastName }}</h1>
-
-<ul>
-    {% for sponsor in sponsors %}
-    <li>{{ sponsor.name }}</li>
-    {% endfor %}
-</ul>
-
-{% include footer %}
-</body>-->
-
 <body>
 <!-- Navigation -->
-<nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
-    <div class="flex items-center">
-        <img src='images/Logo_black.svg' alt="Logo" class="h-4"/>
-    </div>
-    <ul class="font-montserrat items-center hidden md:flex">
-        <li class="mx-3 ">
-            <a class="growing-underline" href="howitworks">
-                How it works
-            </a>
-        </li>
-        <li class="growing-underline mx-3">
-            <a href="features">Features</a>
-        </li>
-        <li class="growing-underline mx-3">
-            <a href="pricing">Pricing</a>
-        </li>
-    </ul>
-    <div class="font-montserrat hidden md:block">
-        <button class="mr-6">Login</button>
-        <button class="py-2 px-4 text-white bg-black rounded-3xl">
-            Signup
-        </button>
-    </div>
-    <div id="showMenu" class="md:hidden">
-        <img src='images/logos/Menu.svg' alt="Menu icon"/>
-    </div>
-</nav>
-<div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down">
-    <div id="hideMenu" class="flex justify-end">
-        <img src='images/logos/Cross.svg' alt="" class="h-16 w-16"/>
-    </div>
-    <ul class="font-montserrat flex flex-col mx-8 my-24 items-center text-3xl">
-        <li class="my-6">
-            <a href="howitworks">How it works</a>
-        </li>
-        <li class="my-6">
-            <a href="features">Features</a>
-        </li>
-        <li class="my-6">
-            <a href="pricing">Pricing</a>
-        </li>
-    </ul>
-</div>
+{% include header %}
 
 <!-- Hero -->
 <section
         class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-secondary">
     <div class="md:flex-1 md:mr-10">
         <h1 class="font-pt-serif text-5xl font-bold mb-7">
-            A headline for your
+            Lajavel, made for a
             <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
-          cool website
+          cleaner code
         </span>
         </h1>
         <p class="font-pt-serif font-normal mb-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum harum
-            tempore consectetur voluptas, cumque nobis laboriosam voluptatem.
+            Lajavel has been made in a way for your code to be clean all the time.
+            It's the best framework on the market, rated five stars by Mr. Clean.
         </p>
-        <div class="font-montserrat">
-            <button class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
-                Call to action
-            </button>
-            <button class="px-6 py-4 border-2 border-black border-solid rounded-lg">
-                Secondary action
-            </button>
-        </div>
     </div>
-    <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
+    <div class="flex justify-around md:block mt-10 md:mt-0 md:flex-1">
         <div class="relative">
-            <img src='images/Highlight1.svg' alt="" class="absolute -top-16 -left-10"/>
+            <img src='images/Highlight1.svg' alt="" class="absolute -top-6"/>
         </div>
-        <img src='images/MacBook Pro.png' alt="Macbook"/>
+        <img src='images/mrclean.png' alt="Mr Clean"/>
         <div class="relative">
             <img src='images/Highlight2.svg' alt="" class="absolute -bottom-10 -right-6"/>
         </div>
@@ -115,27 +51,27 @@
             <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
                 1
             </div>
-            <h3 class="font-montserrat font-medium text-xl mb-2">Eat</h3>
+            <h3 class="font-montserrat font-medium text-xl mb-2">Download</h3>
             <p class="text-center font-montserrat">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Using NPM or the Github Release.
             </p>
         </div>
         <div class="flex-1 mx-8 flex flex-col items-center my-4">
             <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
                 2
             </div>
-            <h3 class="font-montserrat font-medium text-xl mb-2">Sleep</h3>
+            <h3 class="font-montserrat font-medium text-xl mb-2">Install</h3>
             <p class="text-center font-montserrat">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+               You just have to follow the tutorial.
             </p>
         </div>
         <div class="flex-1 mx-8 flex flex-col items-center my-4">
             <div class="border-2 rounded-full bg-secondary text-black h-12 w-12 flex justify-center items-center mb-3">
                 3
             </div>
-            <h3 class="font-montserrat font-medium text-xl mb-2">Rave</h3>
+            <h3 class="font-montserrat font-medium text-xl mb-2">Code</h3>
             <p class="text-center font-montserrat">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Make the world shine through your usage of Lajavel.
             </p>
         </div>
     </div>
@@ -151,12 +87,11 @@
         <div class="flex items-start font-montserrat my-6 mr-10">
             <img src='images/logos/Heart.svg' alt='' class="h-7 mr-4"/>
             <div>
-                <h3 class="font-semibold text-2xl">Feature #1</h3>
+                <h3 class="font-semibold text-2xl">Fast</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
+                    Lajavel is optimized in order to run faster than all our concurrent.
+                    With the cleanest code on the market, we are sure that you will be
+                    satisfied with the speed of our framework.
                 </p>
             </div>
         </div>
@@ -164,12 +99,11 @@
         <div class="flex items-start font-montserrat my-6 mr-10">
             <img src='images/logos/Heart.svg' alt='' class="h-7 mr-4"/>
             <div>
-                <h3 class="font-semibold text-2xl">Feature #2</h3>
+                <h3 class="font-semibold text-2xl">Dynamic</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
+                    You can implement all your assets dynamically in Lajavel.
+                    It could be CSS, JS, JAVEL, it all works with just one mention in the code.
+                    This is the future of coding.
                 </p>
             </div>
         </div>
@@ -177,12 +111,11 @@
         <div class="flex items-start font-montserrat my-6 mr-10">
             <img src='images/logos/Heart.svg' alt='' class="h-7 mr-4"/>
             <div>
-                <h3 class="font-semibold text-2xl">Feature #3</h3>
+                <h3 class="font-semibold text-2xl">MVC</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
+                    Lajavel follows the MVC Design Pattern, and is the first one to apply
+                    in such a perfect way. This is what you can except from our
+                    fresh framework.
                 </p>
             </div>
         </div>
@@ -190,12 +123,11 @@
         <div class="flex items-start font-montserrat my-6 mr-10">
             <img src='images/logos/Heart.svg' alt='' class="h-7 mr-4"/>
             <div>
-                <h3 class="font-semibold text-2xl">Feature #4</h3>
+                <h3 class="font-semibold text-2xl">Errors</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
+                    When you get errors in your code, it always gets a bit messy.
+                    But Lajavel comes in clutch with a clean way to display errors.
+                    You will never get lost in your code again.
                 </p>
             </div>
         </div>
@@ -212,24 +144,24 @@
 
         <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24'>
             <h3 class="font-pt-serif font-normal text-2xl mb-4">
-                The Good
+                Extrait de Javel
             </h3>
             <div class="font-montserrat font-bold text-2xl mb-4">
-                $25
+                $2
                 <span class="font-normal text-base"> / month</span>
             </div>
 
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #1</p>
+                <p>Keeps the floor clean</p>
             </div>
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #2</p>
+                <p>Runs faster</p>
             </div>
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #3</p>
+                <p>Mr. Clean kisses you</p>
             </div>
 
             <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
@@ -239,24 +171,24 @@
 
         <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-12'>
             <h3 class="font-pt-serif font-normal text-2xl mb-4">
-                The Bad
+                Eau de Javel
             </h3>
             <div class="font-montserrat font-bold text-2xl mb-4">
-                $40
+                $5
                 <span class="font-normal text-base"> / month</span>
             </div>
 
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #1</p>
+                <p>Cleanest water on earth</p>
             </div>
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #2</p>
+                <p>Mr. Clean sleeps with you</p>
             </div>
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #3</p>
+                <p>Lajavel accepts your PR</p>
             </div>
 
             <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
@@ -266,24 +198,24 @@
 
         <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24'>
             <h3 class="font-pt-serif font-normal text-2xl mb-4">
-                The Ugly
+                Eau de Labarraque
             </h3>
             <div class="font-montserrat font-bold text-2xl mb-4">
-                $50
+                $10
                 <span class="font-normal text-base"> / month</span>
             </div>
 
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #1</p>
+                <p>Mr. Clean is all yours</p>
             </div>
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #2</p>
+                <p>You can work for Lajavel</p>
             </div>
             <div class="flex">
                 <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
-                <p>Benefit #3</p>
+                <p>You get a free mop</p>
             </div>
 
             <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
@@ -305,12 +237,12 @@
     <div toggleElement class="w-full py-4">
         <div class="flex justify-between items-center">
             <div question class="font-montserrat font-medium mr-auto">
-                Where can I get this HTML template?
+                What is Lajavel?
             </div>
             <img src='images/logos/CaretRight.svg' alt="" class="transform transition-transform"/>
         </div>
         <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
-            You can download it on Gumroad.com
+            Lajavel is a Java Web Framework made with the purpose of writing cleaner code.
         </div>
     </div>
     <hr class="w-full bg-white"/>
@@ -318,12 +250,12 @@
     <div toggleElement class="w-full py-4">
         <div class="flex justify-between items-center">
             <div question class="font-montserrat font-medium mr-auto">
-                Is this HTML template free?
+                Is is free?
             </div>
             <img src='images/logos/CaretRight.svg' alt="" class="transform transition-transform"/>
         </div>
         <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
-            Yes! For you it is free.
+            Yes! Being clean is always free. But you can get even shinier with our premium plans.
         </div>
     </div>
     <hr class="w-full bg-white"/>

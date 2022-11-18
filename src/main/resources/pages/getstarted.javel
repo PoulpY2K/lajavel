@@ -1,0 +1,19 @@
+<html lang="FR-fr">
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Lajavel</title>
+    <meta name="description" content="Lajavel is a new Java Web Framework made for hardcore developers."/>
+    <meta name="keywords" content="lajavel,laravel,framework"/>
+    <link rel="stylesheet" href="{{ assets(css) }}">
+    <script src="{{ assets(js) }}" async></script>
+    {% include tailwind %}
+</head>
+
+<body>
+<!-- Navigation -->
+{% include header %}
+
+</body>
+</html>

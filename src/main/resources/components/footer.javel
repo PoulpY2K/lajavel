@@ -1,6 +1,6 @@
 <section class="bg-black sectionSize">
     <div class="mb-4">
-        <img src='images/Logo_white.svg' alt="Logo" class="h-4"/>
+        <img src='images/logo_medium.png' alt="Logo" class="h-16"/>
     </div>
     <div class="flex mb-8">
         <a href="#">
@@ -17,6 +17,6 @@
         </a>
     </div>
     <div class="text-white font-montserrat text-sm">
-        © 2021 STARTUP. All rights reserved
+        © 2022 LAJAVEL. All rights reserved
     </div>
 </section>

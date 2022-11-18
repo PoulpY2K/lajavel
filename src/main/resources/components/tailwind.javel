@@ -1,0 +1,62 @@
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+<script>
+    tailwind.config = {
+        darkMode: false, // or 'media' or 'class'
+        theme: {
+            colors: {
+                secondary: "#F4F2ED",
+                black: "black",
+                white: "white",
+            },
+            fontFamily: {
+                "pt-serif": ["PT Serif", "serif"],
+                montserrat: ["Montserrat", "sans-serif"],
+            },
+            backgroundSize: {
+                auto: "auto",
+                cover: "cover",
+                contain: "contain",
+                "100%": "100%",
+            },
+            extend: {
+                backgroundImage: {
+                    underline1: "url('./images/Underline1.svg')",
+                    underline2: "url('./images/Underline2.svg')",
+                    underline3: "url('./images/Underline3.svg')",
+                    underline4: "url('./images/Underline4.svg')",
+                    highlight3: "url('./images/Highlight3.svg')",
+                },
+                keyframes: {
+                    "fade-in-down": {
+                        "0%": {
+                            opacity: "0",
+                            transform: "translateY(-10px)",
+                        },
+                        "100%": {
+                            opacity: "1",
+                            transform: "translateY(0)",
+                        },
+                    },
+                },
+                animation: {
+                    "fade-in-down": "fade-in-down 0.5s ease-out",
+                },
+            },
+        },
+        variants: {
+            extend: {},
+        },
+        plugins: [],
+    }
+</script>
+<style type="text/tailwindcss">
+    @layer components {
+        .sectionSize {
+            @apply lg:px-48 md:px-12 px-4 py-14 flex flex-col items-center;
+        }
+
+        .secondaryTitle {
+            @apply font-pt-serif text-3xl bg-left-bottom bg-no-repeat pb-8 px-16 mb-8;
+        }
+    }
+</style>

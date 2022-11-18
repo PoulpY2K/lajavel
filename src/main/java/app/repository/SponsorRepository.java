@@ -12,15 +12,16 @@ import java.util.Optional;
 // https://stackoverflow.com/questions/26285520/implementing-singleton-with-an-enum-in-java
 
 public enum SponsorRepository {
-
     INSTANCE;
 
     private final List<Sponsor> sponsors;
 
     SponsorRepository() {
         this.sponsors = new ArrayList<>();
-        this.sponsors.add(new Sponsor("Sponsor 1", "test", "url", new Date()));
-        this.sponsors.add(new Sponsor("Sponsor 2", "test", "url", new Date()));
+        this.sponsors.add(new Sponsor("MyDigitalSchool",
+                "https://www.lacuisineduweb.com/wp-content/uploads/2020/01/logo-grand-detoure.png",
+                "https://www.mydigitalschool.com/",
+                new Date()));
     }
 
     public static Sponsor get(int id) {

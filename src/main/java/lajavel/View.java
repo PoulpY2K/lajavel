@@ -20,11 +20,11 @@ public class View {
         String viewContent = View.getViewContentFromFilename(viewName);
         StringBuffer sb = new StringBuffer();
 
-        viewContent = View.replaceProperties(viewContent, sb, entries);
+        viewContent = View.replaceAssets(viewContent, sb);
 
         View.clearBuffer(sb);
 
-        viewContent = View.replaceAssets(viewContent, sb);
+        viewContent = View.replaceProperties(viewContent, sb, entries);
 
         return viewContent;
     }
@@ -44,6 +44,9 @@ public class View {
             String propertyName = objectAndProperty[1];
 
             for (Map.Entry<String, Object> entry : entries) {
+
+                Log.warn(entry.getValue().toString());
+
                 if (entry.getKey().equals(objectName)) {
                     m.appendReplacement(sb, View.getValueOf(propertyName, entry.getValue()));
                     break;
@@ -132,7 +135,7 @@ public class View {
         return clazz.cast(returnValue);
     }
 
-    private static StringBuffer clearBuffer(StringBuffer sb) {
-        return sb.delete(0, sb.length());
+    private static void clearBuffer(StringBuffer sb) {
+        sb.delete(0, sb.length());
     }
 }

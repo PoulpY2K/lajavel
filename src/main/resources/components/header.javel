@@ -1,10 +1,13 @@
 <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-secondary z-10">
     <div class="flex items-center">
-        <img src='images/logo_medium.png' alt="Logo" class="h-16"/>
+        <a href="/">
+            <img src='images/logo_medium.png' alt="Logo" class="h-16"/>
+        </a>
     </div>
     <ul class="font-montserrat items-center hidden md:flex">
         <li class="mx-3">
-            <a href="get-started" class="button bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
+            <a href="get-started"
+               class="button bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
                 Get Started
             </a>
         </li>

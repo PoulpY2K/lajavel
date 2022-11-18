@@ -1,6 +1,5 @@
 package app.controller;
 
-import app.repository.ContributorRepository;
 import app.repository.SponsorRepository;
 import lajavel.Controller;
 import lajavel.Response;
@@ -14,8 +13,7 @@ public class IndexController extends Controller {
         response.html(
                 View.make(
                         "index",
-                        Map.entry("sponsors", SponsorRepository.getAll()),
-                        Map.entry("stephane", ContributorRepository.get(1))
+                        Map.entry("mds", SponsorRepository.get(1))
                 )
         );
     }

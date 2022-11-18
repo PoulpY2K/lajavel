@@ -27,8 +27,10 @@
         </h1>
         <p class="font-pt-serif font-normal mb-7">
             Lajavel has been made in a way for your code to be clean all the time.
-            It's the best framework on the market, rated five stars by Mr. Clean.
+            It's the best framework on the market, rated five stars by Mr. Clean and sponsored
+            by My Digital School.
         </p>
+        <img src='{{ mds.imageUrl }}' alt="MDS" class="w-56"/>
     </div>
     <div class="flex justify-around md:block mt-10 md:mt-0 md:flex-1">
         <div class="relative">
@@ -62,7 +64,7 @@
             </div>
             <h3 class="font-montserrat font-medium text-xl mb-2">Install</h3>
             <p class="text-center font-montserrat">
-               You just have to follow the tutorial.
+                You just have to follow the tutorial.
             </p>
         </div>
         <div class="flex-1 mx-8 flex flex-col items-center my-4">

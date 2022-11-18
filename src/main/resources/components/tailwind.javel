@@ -4,7 +4,7 @@
         darkMode: false, // or 'media' or 'class'
         theme: {
             colors: {
-                secondary: "#F4F2ED",
+                secondary: "#F1EDE2",
                 black: "black",
                 white: "white",
             },

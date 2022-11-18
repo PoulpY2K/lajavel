@@ -9,9 +9,9 @@ public class Contributor {
     public String firstName;
     public String lastName;
     public String githubUrl;
-    public int contributionPercentage;
+    public String contributionPercentage;
 
-    public Contributor(String firstName, String imageUrl, String lastName, String githubUrl, int contributionPercentage) {
+    public Contributor(String firstName, String imageUrl, String lastName, String githubUrl, String contributionPercentage) {
         this.id = count.incrementAndGet();
         this.imageUrl = imageUrl;
         this.firstName = firstName;

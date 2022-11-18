@@ -38,7 +38,7 @@
         </div>
         <img src='images/mrclean.png' alt="Mr Clean"/>
         <div class="relative">
-            <img src='images/Highlight2.svg' alt="" class="absolute -bottom-10 -right-6"/>
+            <img src='images/Highlight2.svg' alt="" class="absolute -bottom-5 -right-6"/>
         </div>
     </div>
 </section>

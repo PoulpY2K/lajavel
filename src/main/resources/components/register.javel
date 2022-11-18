@@ -1,0 +1,10 @@
+<h2 class="font-pt-serif text-xl font-bold mt-8 mb-4">
+    Then you can register any route you want :
+</h2>
+<script type="text/plain" class="language-java">public class MyApp {
+    public static void main(String[] args) {
+        Application.start(7070);
+        // Register route through MVC pattern
+        Route.register(HttpVerb.GET, "/", IndexController.class, "index");
+    }
+}</script>

@@ -1,0 +1,87 @@
+<section class="sectionSize bg-secondary py-0">
+    <div>
+        <h2 class="secondaryTitle bg-underline4 mb-0 bg-100%">Pricing</h2>
+    </div>
+    <div class="flex w-full flex-col md:flex-row">
+        <div class="flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24">
+            <h3 class="font-pt-serif font-normal text-2xl mb-4">
+                Extrait de Javel
+            </h3>
+            <div class="font-montserrat font-bold text-2xl mb-4">
+                &#36;2
+                <span class="font-normal text-base"> / month</span>
+            </div>
+
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>Keeps the floor clean</p>
+            </div>
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>Runs faster</p>
+            </div>
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>Mr. Clean kisses you</p>
+            </div>
+
+            <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
+                Choose plan
+            </button>
+        </div>
+
+        <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-12'>
+            <h3 class="font-pt-serif font-normal text-2xl mb-4">
+                Eau de Javel
+            </h3>
+            <div class="font-montserrat font-bold text-2xl mb-4">
+                &#36;5
+                <span class="font-normal text-base"> / month</span>
+            </div>
+
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>Cleanest water on earth</p>
+            </div>
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>Mr. Clean sleeps with you</p>
+            </div>
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>Lajavel accepts your PR</p>
+            </div>
+
+            <button class="border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
+                Choose plan
+            </button>
+        </div>
+
+        <div class='flex-1 flex flex-col mx-6 shadow-2xl relative bg-secondary rounded-2xl py-5 px-8 my-8 md:top-24'>
+            <h3 class="font-pt-serif font-normal text-2xl mb-4">
+                Eau de Labarraque
+            </h3>
+            <div class="font-montserrat font-bold text-2xl mb-4">
+                &#36;10
+                <span class="font-normal text-base"> / month</span>
+            </div>
+
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>Mr. Clean is all yours</p>
+            </div>
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>You can work for Lajavel</p>
+            </div>
+            <div class="flex">
+                <img src='images/logos/CheckedBox.svg' alt="" class="mr-1"/>
+                <p>You get a free mop</p>
+            </div>
+
+            <button class=" border-2 border-solid border-black rounded-xl text-lg py-3 mt-4">
+                Choose plan
+            </button>
+        </div>
+    </div>
+</section>

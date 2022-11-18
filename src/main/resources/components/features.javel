@@ -1,0 +1,56 @@
+<section class="sectionSize bg-secondary">
+    <div>
+        <h2 class="secondaryTitle bg-underline3 bg-100%">Features</h2>
+    </div>
+    <div class="md:grid md:grid-cols-2 md:grid-rows-2">
+
+        <div class="flex items-start font-montserrat my-6 mr-10">
+            <img src='images/logos/Heart.svg' alt='' class="h-7 mr-4"/>
+            <div>
+                <h3 class="font-semibold text-2xl">Fast</h3>
+                <p>
+                    Lajavel is optimized in order to run faster than all our concurrent.
+                    With the cleanest code on the market, we are sure that you will be
+                    satisfied with the speed of our framework.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex items-start font-montserrat my-6 mr-10">
+            <img src='images/logos/Heart.svg' alt='' class="h-7 mr-4"/>
+            <div>
+                <h3 class="font-semibold text-2xl">Dynamic</h3>
+                <p>
+                    You can implement all your assets dynamically in Lajavel.
+                    It could be CSS, JS, JAVEL, it all works with just one mention in the code.
+                    This is the future of coding.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex items-start font-montserrat my-6 mr-10">
+            <img src='images/logos/Heart.svg' alt='' class="h-7 mr-4"/>
+            <div>
+                <h3 class="font-semibold text-2xl">MVC</h3>
+                <p>
+                    Lajavel follows the MVC Design Pattern, and is the first one to apply
+                    in such a perfect way. This is what you can except from our
+                    fresh framework.
+                </p>
+            </div>
+        </div>
+
+        <div class="flex items-start font-montserrat my-6 mr-10">
+            <img src='images/logos/Heart.svg' alt='' class="h-7 mr-4"/>
+            <div>
+                <h3 class="font-semibold text-2xl">Errors</h3>
+                <p>
+                    When you get errors in your code, it always gets a bit messy.
+                    But Lajavel comes in clutch with a clean way to display errors.
+                    You will never get lost in your code again.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>

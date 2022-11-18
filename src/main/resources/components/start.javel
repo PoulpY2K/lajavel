@@ -1,0 +1,4 @@
+<h2 class="font-pt-serif text-xl font-bold mt-5 mb-4">
+    To start the server, you just have to write :
+</h2>
+<script type="text/plain" class="language-java">Application.start(8080);</script>

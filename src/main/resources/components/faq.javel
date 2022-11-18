@@ -1,0 +1,46 @@
+<section class="sectionSize items-start pt-8 md:pt-36 bg-black text-white">
+    <div>
+        <h2 class="secondaryTitle bg-highlight3 p-10 mb-0 bg-center bg-100%">
+            FAQ
+        </h2>
+    </div>
+
+    <div toggleElement class="w-full py-4">
+        <div class="flex justify-between items-center">
+            <div question class="font-montserrat font-medium mr-auto">
+                What is Lajavel?
+            </div>
+            <img src='images/logos/CaretRight.svg' alt="" class="transform transition-transform"/>
+        </div>
+        <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+            Lajavel is a Java Web Framework made with the purpose of writing cleaner code.
+        </div>
+    </div>
+    <hr class="w-full bg-white"/>
+
+    <div toggleElement class="w-full py-4">
+        <div class="flex justify-between items-center">
+            <div question class="font-montserrat font-medium mr-auto">
+                Is it free?
+            </div>
+            <img src='images/logos/CaretRight.svg' alt="" class="transform transition-transform"/>
+        </div>
+        <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+            Yes! Being clean is always free. But you can get even shinier with our premium plans.
+        </div>
+    </div>
+    <hr class="w-full bg-white"/>
+
+    <div toggleElement class="w-full py-4">
+        <div class="flex justify-between items-center">
+            <div question class="font-montserrat font-medium mr-auto">
+                Am I awesome?
+            </div>
+            <img src='images/logos/CaretRight.svg' alt="" class="transform transition-transform"/>
+        </div>
+        <div answer class="font-montserrat text-sm font-extralight pb-8 hidden">
+            Yes! No doubt about it.
+        </div>
+    </div>
+    <hr class="w-full bg-white"/>
+</section>

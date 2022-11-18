@@ -28,30 +28,11 @@
 
         <h1 class="text-5xl font-montserrat font-bold">Get Started</h1>
 
-        <h2 class="font-pt-serif text-xl font-bold mt-5 mb-4">
-            To start the server, you just have to write :
-        </h2>
-        <script type="text/plain" class="language-java">Application.start(8080);</script>
+        {% include start %}
 
-        <h2 class="font-pt-serif text-xl font-bold mt-8 mb-4">
-            Then you can register any route you want :
-        </h2>
-        <script type="text/plain" class="language-java">public class MyApp {
-    public static void main(String[] args) {
-        Application.start(7070);
-        // Register route through MVC pattern
-        Route.register(HttpVerb.GET, "/", IndexController.class, "index");
-    }
-}</script>
+        {% include register %}
 
-        <h2 class="font-pt-serif text-xl font-bold mt-8 mb-4">
-            Once you have registered your controller through the route you can create it as follows :
-        </h2>
-        <script type="text/plain" class="language-java">public class IndexController extends Controller {
-    public void index(Context context) {
-        context.html(View.make("index"));
-    }
-}</script>
+        {% include make %}
     </div>
 </section>
 

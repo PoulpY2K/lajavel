@@ -1,0 +1,8 @@
+<h2 class="font-pt-serif text-xl font-bold mt-8 mb-4">
+    Once you have registered your controller through the route you can create it as follows :
+</h2>
+<script type="text/plain" class="language-java">public class IndexController extends Controller {
+    public void index(Context context) {
+        context.html(View.make("index"));
+    }
+}</script>

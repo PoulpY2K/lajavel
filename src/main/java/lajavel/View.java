@@ -1,7 +1,5 @@
 package lajavel;
 
-import app.Main;
-
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -9,6 +7,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,6 +20,10 @@ public class View {
         StringBuffer sb = new StringBuffer();
 
         viewContent = View.replaceAssets(viewContent, sb);
+
+        View.clearBuffer(sb);
+
+        viewContent = View.replaceForeach(viewContent, sb, entries);
 
         View.clearBuffer(sb);
 
@@ -44,12 +47,38 @@ public class View {
             String propertyName = objectAndProperty[1];
 
             for (Map.Entry<String, Object> entry : entries) {
-
-                Log.warn(entry.getValue().toString());
-
                 if (entry.getKey().equals(objectName)) {
                     m.appendReplacement(sb, View.getValueOf(propertyName, entry.getValue()));
                     break;
+                }
+            }
+        }
+
+        m.appendTail(sb);
+
+        return sb.toString();
+    }
+
+    @SafeVarargs
+    public static String replaceForeach(String html, StringBuffer sb, Map.Entry<String, Object>... entries) {
+        Matcher m = Pattern.compile("\\{%\s*?for (\\S*) in (\\S*)\s*?%}(.*)\\{%\s*?endfor\s*?%}", Pattern.DOTALL).matcher(html);
+
+        while (m.find()) {
+            String item = m.group(1).replaceAll("\\s+", "");
+            String items = m.group(2).replaceAll("\\s+", "");
+            String content = m.group(3).replaceAll("\\s+", "");
+
+            for (Map.Entry<String, Object> entry : entries) {
+                if (entry.getKey().equals(items)) {
+                    List<?> models = (List<?>) entry.getValue();
+
+                    StringBuffer tempSb = new StringBuffer();
+
+                    for (Object model : models) {
+                        View.replaceProperties(content, tempSb, Map.entry(item, model));
+                    }
+
+                    m.appendReplacement(sb, tempSb.toString());
                 }
             }
         }
@@ -65,7 +94,7 @@ public class View {
         while (m.find()) {
             String path = m.group(1).replaceAll("\\s+", "");
 
-            URL resource = Main.class.getClassLoader().getResource("public/" + path);
+            URL resource = View.class.getClassLoader().getResource("public/" + path);
 
             if (resource == null) {
                 Log.error("No resource found at public/" + path);
@@ -81,7 +110,7 @@ public class View {
     }
 
     private static String getViewContentFromFilename(String filename) {
-        URL resource = Main.class.getClassLoader().getResource("views/" + filename + ".javel");
+        URL resource = View.class.getClassLoader().getResource("views/" + filename + ".javel");
 
         if (resource == null) {
             Log.error("No resource found at views/" + filename + ".javel");
@@ -115,6 +144,7 @@ public class View {
         } catch (Exception e) {
             // Do nothing, we'll return the default value
             Log.error(e.getMessage());
+            e.printStackTrace();
         }
 
         return clazz.cast(returnValue);
